@@ -1,6 +1,6 @@
 {
-  "name": "rfcg",
-  "version": "1.0.1",
+  "name": "@aliraza944/react-cli",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
