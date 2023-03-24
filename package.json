@@ -1,9 +1,13 @@
 {
   "name": "@aliraza944/react-cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A cli for react that will create basic react files like components, hooks redux files etc.",
+  "main": "bin/index.js",
+  "bin": {
+    "crf": "bin/index.js"
+  },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/aliraza944/React-CLI/issues"
   },
-  "homepage": "https://github.com/aliraza944/React-CLI#readme"
+  "homepage": "https://github.com/aliraza944/React-CLI#readme",
+  "dependencies": {
+    "@types/node": "^18.15.7",
+    "typescript": "^5.0.2"
+  }
 }
