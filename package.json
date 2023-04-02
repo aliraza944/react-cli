@@ -22,6 +22,7 @@
   "homepage": "https://github.com/aliraza944/React-CLI#readme",
   "dependencies": {
     "@types/node": "^18.15.7",
+    "commander": "^10.0.0",
     "typescript": "^5.0.2"
   }
 }
