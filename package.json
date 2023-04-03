@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "A cli for react that will create basic react files like components, hooks redux files etc.",
   "main": "bin/index.js",
+  "type": "module",
   "bin": {
     "crf": "bin/index.js"
   },
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/aliraza944/React-CLI#readme",
   "dependencies": {
     "@types/node": "^18.15.7",
+    "commander": "^10.0.0",
     "typescript": "^5.0.2"
   }
 }

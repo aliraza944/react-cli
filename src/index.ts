@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const currentDateTime = new Date().toISOString();
+import program from "./utils/cli.js";
 
-console.log(currentDateTime);
+program.parse(process.argv);
