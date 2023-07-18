@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "local": "npm run build && npx crf component test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
