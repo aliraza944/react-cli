@@ -1,15 +1,15 @@
 {
   "name": "@aliraza944/react-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A cli for react that will create basic react files like components, hooks redux files etc.",
   "main": "bin/index.js",
   "type": "module",
   "bin": {
-    "crf": "bin/index.js"
+    "rc": "bin/index.js"
   },
   "scripts": {
     "build": "tsc",
-    "local": "npm run build && npx crf component test",
+    "local": "npm run build && npx rc component test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
