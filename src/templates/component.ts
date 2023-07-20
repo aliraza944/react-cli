@@ -10,4 +10,9 @@ export const ${name} = () => {
 };
 `;
 };
-export { ComponentTemplate };
+const IndexTemplate = (name: String) => {
+  return `import ${name} from './${name}';
+export default ${name} ;
+`;
+};
+export { ComponentTemplate, IndexTemplate };
