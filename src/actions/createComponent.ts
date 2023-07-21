@@ -1,7 +1,5 @@
-import { spawn } from "child_process";
 import * as Path from "path";
 import * as fs from "fs";
-import { __dirname } from "../utils/rootDirPath.js";
 import { upperCaseName } from "../utils/upperCaseName.js";
 import { ComponentTemplate, IndexTemplate } from "../templates/component.js";
 export const createComponent = (name: string) => {
@@ -31,7 +29,12 @@ const createComponentsFile = (name: string) => {
 
   const fileContent = ComponentTemplate(name);
   const indexFileContent = IndexTemplate(name);
-  const componentsDir = Path.resolve(__dirname, `src`, "components", `${name}`);
+  const componentsDir = Path.resolve(
+    process.cwd(),
+    `src`,
+    "components",
+    `${name}`
+  );
 
   // check if the components directory exists
   lookForComponentsFolder(componentsDir);
