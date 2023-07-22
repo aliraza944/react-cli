@@ -3,6 +3,7 @@ import * as fs from "fs";
 import { upperCaseName } from "../utils/upperCaseName.js";
 import { ComponentTemplate, IndexTemplate } from "../templates/component.js";
 import { isTypeScriptProject } from "../utils/typeScriptSelection.js";
+import { createFile } from "../utils/createFile.js";
 export const createComponent = (name: string) => {
   const componentName = upperCaseName(name);
   createComponentsFile(componentName);
@@ -41,17 +42,7 @@ const createComponentsFile = (name: string) => {
   const filePath = Path.join(componentsDir, name + `${fileExtension}`);
   const indexFilePath = Path.join(componentsDir, "index" + `${fileExtension}`);
 
-  fs.writeFile(filePath, fileContent, (err) => {
-    if (err) {
-      console.error("Error creating the file:", err);
-    } else {
-      fs.writeFile(indexFilePath, indexFileContent, (err) => {
-        if (err) {
-          console.error("Error creating the file:", err);
-        } else {
-          console.log(`Component ${name}${fileExtension} created successfully`);
-        }
-      });
-    }
-  });
+  const successMessage = `Component ${name}${fileExtension} created successfully`;
+  createFile(filePath, fileContent);
+  createFile(indexFilePath, indexFileContent, successMessage);
 };
