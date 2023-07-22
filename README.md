@@ -28,6 +28,16 @@ rc component <your-component-name>
 ```
 This will create a components folder in you components directory. This folder will contain the `<your-component-name>.jsx` file and an `index.jsx` file form which your component will be default exported.
 
+#### Component's Custom Hook
+
+To create a component with custom hook you have to run the following command root directory you your project
+
+```sh
+rc component <your-component-name> --hook <your-hooks-dir>
+```
+This will create a components folder in you components directory. This folder will contain the `<your-component-name>.jsx` file and an `index.jsx` file form which your component will be default exported. It will also create a `use<your-component-name>.js` file in the specified hook directory. If you leave the hook directory empty it will create the hook in same directory of you component.
+
+
 <div>
 <a href="https://www.linkedin.com/in/ali-raza-sabri/">
   <img src="https://img.shields.io/badge/LinkedIn-Ali%20Raza-blue?logo=linkedin&logoColor=blue&color=blue" />
