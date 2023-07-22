@@ -36,7 +36,11 @@ const createComponentsFile = (name: string, hook = false) => {
     `use${name}` + `${fileExtension}`
   );
   const successMessage = `Component ${name}${fileExtension}x created successfully`;
+  //  component main file
   createFile(filePath, fileContent);
-  createFile(customHookFilePath, customHookFileContent);
+  // custom hook file
+  typeof hook === "string" &&
+    createFile(customHookFilePath, customHookFileContent);
+  // index file
   createFile(indexFilePath, indexFileContent, successMessage);
 };
