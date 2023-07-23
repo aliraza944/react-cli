@@ -1,6 +1,6 @@
 {
   "name": "@aliraza944/react-cli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A cli for react that will create basic react files like components, hooks redux files etc.",
   "main": "bin/index.js",
   "type": "module",
@@ -16,7 +16,15 @@
     "type": "git",
     "url": "git+https://github.com/aliraza944/React-CLI.git"
   },
-  "author": "",
+  "author": {
+    "name": "Ali Raza",
+    "email": "alisabri022@gmail.com"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "react-cli"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aliraza944/React-CLI/issues"
