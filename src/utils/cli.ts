@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { createComponent } from "../actions/createComponent.js";
 import { createReactFile } from "../actions/createReactFile.js";
+import { createCustomHook } from "../actions/createCustomHook.js";
 const program = new Command();
 //TODO: add version
 program.name("react cli").description("CLI to quickly create react components");
@@ -20,4 +21,8 @@ program
     createComponent(name, option.hook);
   });
 
+// create custom hook
+program.command("hook <name> [folder]").action((name, folder) => {
+  createCustomHook(name, folder);
+});
 export default program;
