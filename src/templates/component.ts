@@ -4,7 +4,7 @@ const ComponentTemplate = (
 ) => {
   let hookImport = "";
   if (typeof hook === "string") {
-    hookImport = `import { use${hook} } from '../../${hook}/use${hook}';`;
+    hookImport = `import { use${name} } from '../../${hook}/use${name}';`;
   }
   if (typeof hook === "boolean") {
     hookImport = `import { use${name} } from './use${name}';`;
