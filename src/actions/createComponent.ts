@@ -11,7 +11,11 @@ export const createComponent = (name: string, hook = false) => {
 };
 
 const createComponentsFile = (name: string, hook = false) => {
-  const fileContent = ComponentTemplate(name);
+  const isCustomHookFolderSpecified = typeof hook === "string";
+  const fileContent = ComponentTemplate(
+    name,
+    isCustomHookFolderSpecified && hook
+  );
   const indexFileContent = IndexTemplate(name);
   const customHookFileContent = customHook(name);
   const componentsDir = Path.resolve(
@@ -26,21 +30,23 @@ const createComponentsFile = (name: string, hook = false) => {
   // check if the components directory exists
   lookForFolder(componentsDir, true);
   // check if the custom hooks directory exists
-  if (typeof hook === "string") {
+  if (isCustomHookFolderSpecified) {
     lookForFolder(customHooksDir);
   }
   const filePath = Path.join(componentsDir, name + `${fileExtension}x`);
+
   const indexFilePath = Path.join(componentsDir, "index" + `${fileExtension}x`);
+
   const customHookFilePath = Path.join(
-    typeof hook === "string" ? customHooksDir : componentsDir,
+    isCustomHookFolderSpecified ? customHooksDir : componentsDir,
     `use${name}` + `${fileExtension}`
   );
   const successMessage = `Component ${name}${fileExtension}x created successfully`;
   //  component main file
   createFile(filePath, fileContent);
   // custom hook file
-  typeof hook === "string" &&
-    createFile(customHookFilePath, customHookFileContent);
+
+  !hook === false && createFile(customHookFilePath, customHookFileContent);
   // index file
   createFile(indexFilePath, indexFileContent, successMessage);
 };

@@ -1,6 +1,10 @@
-const ComponentTemplate = (name: String) => {
+const ComponentTemplate = (name: String, hook = "") => {
   return `import React from 'react';
-
+${
+  hook
+    ? `import { use${name} } from '../../${hook}/use${name}';`
+    : `import { use${name} } from './use${name}';`
+}
 export const ${name} = () => {
 
   return (
