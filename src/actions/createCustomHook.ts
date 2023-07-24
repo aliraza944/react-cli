@@ -22,6 +22,6 @@ const customHookFile = (name: string, folder: string | undefined) => {
 
   const filePath = Path.join(customHooksDir, "use" + name + `${fileExtension}`);
 
-  const successMessage = `Custom Hook  use${name}${fileExtension}x created successfully`;
+  const successMessage = `Custom Hook  use${name}${fileExtension} created successfully`;
   createFile(filePath, fileContent, successMessage);
 };
