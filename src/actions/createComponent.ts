@@ -5,17 +5,20 @@ import { isTypeScriptProject } from "../utils/typeScriptSelection.js";
 import { createFile } from "../utils/createFile.js";
 import { customHook } from "../templates/customHook.js";
 import { lookForFolder } from "../utils/lookForFolder.js";
-export const createComponent = (name: string, hook = false) => {
+export const createComponent = (
+  name: string,
+  hook: undefined | boolean | string
+) => {
   const componentName = upperCaseName(name);
   createComponentsFile(componentName, hook);
 };
 
-const createComponentsFile = (name: string, hook = false) => {
+const createComponentsFile = (
+  name: string,
+  hook: undefined | boolean | string
+) => {
   const isCustomHookFolderSpecified = typeof hook === "string";
-  const fileContent = ComponentTemplate(
-    name,
-    isCustomHookFolderSpecified && hook
-  );
+  const fileContent = ComponentTemplate(name, hook);
   const indexFileContent = IndexTemplate(name);
   const customHookFileContent = customHook(name);
   const componentsDir = Path.resolve(
@@ -46,7 +49,7 @@ const createComponentsFile = (name: string, hook = false) => {
   createFile(filePath, fileContent);
   // custom hook file
 
-  !hook === false && createFile(customHookFilePath, customHookFileContent);
+  hook !== undefined && createFile(customHookFilePath, customHookFileContent);
   // index file
   createFile(indexFilePath, indexFileContent, successMessage);
 };
