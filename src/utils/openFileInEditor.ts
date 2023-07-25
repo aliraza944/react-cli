@@ -1,5 +1,6 @@
 import { exec } from "child_process";
 
 export function openFileInEditor(filePath: string) {
-  exec(`code ${filePath}`);
+  const formattedPath = filePath.replace(/\\/g, "\\\\");
+  exec(`code "${formattedPath}"`);
 }

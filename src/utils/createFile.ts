@@ -1,5 +1,5 @@
 import * as fs from "fs";
-
+import { openFileInEditor } from "./openFileInEditor.js";
 const createFile = (
   filePath: string,
   fileContent: string,
@@ -10,6 +10,8 @@ const createFile = (
       console.error("Error creating the file:", err);
     } else {
       console.log(successMessage);
+      if (filePath.includes("index")) return;
+      openFileInEditor(filePath);
     }
   });
 };
