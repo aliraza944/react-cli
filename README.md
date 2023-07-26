@@ -3,8 +3,8 @@
 <div align="center">
 	<h1>React CLI<br>
 	<!-- <img src="https://img.shields.io/npm/l/react-cli?color=8A2BE2"> -->
-	<img src="https://img.shields.io/npm/v/react-cli?color=8A2BE2">
-	<img src="https://img.shields.io/npm/dt/react-cli?color=8A2BE2">
+	<img src="https://img.shields.io/npm/v/%40aliraza944%2Freact-cli">
+	<img src="https://img.shields.io/npm/dw/%40aliraza944%2Freact-cli">
 	</h1>
 </div>
 
