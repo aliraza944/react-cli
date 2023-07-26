@@ -1,6 +1,6 @@
 {
   "name": "@aliraza944/react-cli",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A cli for react that will create basic react files like components, hooks redux files etc.",
   "main": "bin/index.js",
   "type": "module",
