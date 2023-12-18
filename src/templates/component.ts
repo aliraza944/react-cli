@@ -22,7 +22,7 @@ export const ${name} = () => {
 `;
 };
 const IndexTemplate = (name: String) => {
-  return `import ${name} from './${name}';
+  return `import {${name}} from './${name}';
 export default ${name} ;
 `;
 };
